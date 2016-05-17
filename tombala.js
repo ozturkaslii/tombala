@@ -2,7 +2,7 @@ function randomNum(min, max)
 {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
+//table'lar her tusa bastıgımda tek bir tablo olmuyor ve sayılar değişmiyor sayıların değişmesi ve birden fazla table olmaması lazım
 function MyTable()
 {
 
