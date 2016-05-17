@@ -5,8 +5,6 @@ function randomNum(min, max)
 
 function MyTable()
 {
-// Fonksiyonun her çağırılışında sayfayı temizlemek istedik.
-
 
 // 7 satır 3 sütundan oluşan tablomuz için değişkenler tanımladık.
 	var satirSayisi = 3;
@@ -40,6 +38,7 @@ function MyTable()
 }
 function severalTables()
 {
+	// Fonksiyonun her çağırılışında sayfayı temizlemek istedik.
 	document.body.innerHTML = '';
 	for(n=1; n<7;n++){
 		document.write("<div class='container'><div class='row'><div class='col-lg-4'>")
