@@ -81,6 +81,8 @@ function severalTables()
 	
 // }
 
+
+
 //random sayı üretip tombalada bulan fonksiyon.
 
 function sayiUret()
@@ -98,7 +100,7 @@ function sayiUret()
 	{
 		rndSayi = randomNum(1, 20);
 		sayi[i] = rndSayi;
-		document.write(" <b>"+sayi[i]+" - "+"</b>");
+		//document.write(" <b>"+sayi[i]+" - "+"</b>");
 		for(k=0;k<result.length; k++){
 		//Girilen sayiyla eslesen result'ı yakaladık
 		 if(result[k] == sayi[i]){
@@ -128,6 +130,7 @@ function sayiUret()
 	}
 	
 	cinko();
+	tombala();
 
 }
 
@@ -149,7 +152,7 @@ function cinko()
 			{
 				if(yeniDizi.allValuesSame())
 				{
-					alert("Çinko !");
+					alert("Cinko !");
 				}
 			}			
 			//console.log(rowlar[0].cells[2].bgColor);
@@ -180,20 +183,44 @@ function tombala()
 	
 	for(i=0; i<tablo.length; i++)
 	{
-		var yeniDizi = [];
+		var yeniDizi1 = [];
+		var yeniDizi2 = [];
+		var yeniDizi3 = [];
 		for(j=0;j<tablo[i].rows.length;j++)
 		{
+			
 			for(k=0;k<rowlar[j].cells.length;k++)
 			{
-				console.log(tablo[i].rowlar[j].cells[k].bgColor);
-				yeniDizi[j] = tablo[i].rowlar[j].cells[k].bgColor;
+				console.log(tablo[i].rows[j].cells[k].bgColor);
+				yeniDizi1[k] = tablo[i].rows[j].cells[k].bgColor;
+				yeniDizi2[k] = tablo[i].rows[j+1].cells[k].bgColor;
+				yeniDizi3[k] = tablo[i].rows[j+2].cells[k].bgColor;
 			
-				if(yeniDizi.length % 3 === 0)
+				if(yeniDizi1.length % 7 === 0 && yeniDizi2.length % 7 === 0 && yeniDizi3.length % 7 === 0)
 				{
-					if(yeniDizi.allValuesSame())
-					{
-						alert("Tombala !");
-					}
+					
+						if(yeniDizi1.allValuesSame())
+						{
+							if(yeniDizi2.allValuesSame())
+							{
+								if(yeniDizi3.allValuesSame())
+								{
+									alert("Tombala !");
+								}else{
+									return;
+								}
+							}
+							else
+							{								
+								return;
+							}
+							
+						}else
+						{
+							return;
+						}
+					
+					
 				}
 			}
 			
